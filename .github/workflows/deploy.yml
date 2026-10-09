@@ -3,7 +3,7 @@ name: Deploy TEAyudo Backend to AWS Lambda
 on:
   push:
     branches:
-      - dev
+      - develop
 
 jobs:
   deploy:
@@ -42,5 +42,7 @@ jobs:
       - name: 🚀 Desplegar Código en AWS Lambda
         run: |
           aws lambda update-function-code \
-            --function-name ${{ secrets.LAMBDA_FUNCTION_NAME || 'teayudo-backend' }} \
+            --function-name ${{ secrets.LAMBDA_FUNCTION_NAME || 'test-backend' }} \
             --zip-file fileb://deploy.zip
+
+          
